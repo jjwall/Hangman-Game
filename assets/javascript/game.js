@@ -101,11 +101,14 @@ window.onload = function() {
 	wordStore = wordArray[Math.floor((Math.random() * 5) + 0)];
 
     var wordFunc = {
-    	wordOperator: function () {
+    	startFunc: function () {
     		winDisplay = document.createTextNode(totalWins);
     		winDiv.appendChild(winDisplay);
     		wrongDisplay = document.createTextNode(wrongCounter);
 			wrongDiv.appendChild(wrongDisplay);
+    	},
+
+    	wordOperator: function () {
 			for (i = 0; i < wordArray[y].length; i++) {
 			currentWordDisplay = document.createTextNode(" _ ");
 			currentWordDiv.appendChild(currentWordDisplay);
@@ -126,7 +129,8 @@ window.onload = function() {
     			mouseStore = true;
     			y = 1;
     			winCounter = 5;
-    			this.wordOperator();    			
+    			this.wordOperator();
+  			
 			}
     	},
 
@@ -299,9 +303,98 @@ window.onload = function() {
 		winCounter--;
 		if (winCounter === 0) {
 			winDiv.removeChild(winDiv.firstChild);
+
 			totalWins++;
+
 			winDisplay = document.createTextNode(totalWins);
+
 			winDiv.appendChild(winDisplay);
+
+			alert("You win!");
+
+			x = 0;
+
+			blankArray = [];
+
+			wrongCounter = 10;
+
+			catStore = false;
+
+			mouseStore = false;
+
+			giraffeStore = false;
+
+			opossumStore = false;
+
+			salamanderStore = false;
+
+			aStore = false;
+
+			bStore = false;
+
+			cStore = false;
+
+			dStore = false;
+
+			eStore = false;
+
+			fStore = false;
+
+			gStore = false;
+
+			hStore = false;
+
+			iStore = false;
+
+			jStore = false;
+
+			kStore = false;
+
+			lStore = false;
+
+			mStore = false;
+
+			nStore = false;
+
+			oStore = false;
+
+			pStore = false;
+
+			qStore = false;
+
+			rStore = false;
+
+			sStore = false;
+
+			tStore = false;
+
+			uStore = false;
+
+			vStore = false;
+
+			wStore = false;
+
+			xStore = false;
+
+			yStore = false;
+
+			zStore = false;
+
+			document.getElementById("current_word").innerHTML = "";
+
+			document.getElementById("guessed").innerHTML = "";
+
+			wordStore = wordArray[Math.floor((Math.random() * 5) + 0)];
+
+			wordFunc.catWord();
+
+			wordFunc.mouseWord();
+
+			wordFunc.giraffeWord();
+
+			wordFunc.opossumWord();
+
+			wordFunc.salamanderWord();
 			} 
 		},
 
@@ -803,14 +896,12 @@ window.onload = function() {
 		}
 }
 	/*jank code right here, just to get functions running for now */
+	wordFunc.startFunc();
 	wordFunc.catWord();
 	wordFunc.mouseWord();
 	wordFunc.giraffeWord();
 	wordFunc.opossumWord();
 	wordFunc.salamanderWord();
-
-	var clicky = document.getElementById('next_button');
-	clicky.click();
 	
 
 	document.addEventListener('keydown', function(event) { 
