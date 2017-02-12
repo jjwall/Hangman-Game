@@ -26,6 +26,14 @@ window.onload = function() {
 
 	var catLetters = " _ _ _ ";
 
+	var underScores = " _ ";
+
+	var blankArray = [];
+
+	var x = 0;
+
+	var y;
+
 	var wordStore;
 
 	var guessNum;
@@ -39,6 +47,8 @@ window.onload = function() {
 	var wrongCounter = 10;
 
 	var catStore = false;
+
+	var mouseStore = false;
 
 	var aStore = false;
 
@@ -55,15 +65,34 @@ window.onload = function() {
     	catWord: function(){
     		if (wordStore === "cat") {
     			catStore = true;
-    			currentWordDisplay = document.createTextNode(catLetters);
-    			currentWordDiv.appendChild(currentWordDisplay);
+    			y = 0;
+    			/*currentWordDisplay = document.createTextNode(catLetters);
+    			currentWordDiv.appendChild(currentWordDisplay);*/
     			wrongDisplay = document.createTextNode(wrongCounter);
 				wrongDiv.appendChild(wrongDisplay);
+				for (i = 0; i < wordArray[y].length; i++) {
+				currentWordDisplay = document.createTextNode(" _ ");
+				currentWordDiv.appendChild(currentWordDisplay);
+				}
     		}
-		}
+    	},
+    	mouseWord: function() {
+    		if (wordStore === "mouse") {
+    			mouseStore = true;
+    			y = 1;
+    			wrongDisplay = document.createTextNode(wrongCounter);
+				wrongDiv.appendChild(wrongDisplay);
+				for (i = 0; i < wordArray[y].length; i++) {
+				currentWordDisplay = document.createTextNode(" _ ");
+				currentWordDiv.appendChild(currentWordDisplay);
+				}
+    		}
+
+    	}
+
     }
 
-    wordFunc.catWord();
+    /*wordFunc.catWord();*/
 
 	var guessFunc = {
 
@@ -106,7 +135,54 @@ window.onload = function() {
 		},
 
 		displayCorrect: function() {
-			if (guessNum === 2 && aStore === false && tStore === false) {
+			for (i = 0; i < wordArray[y].length; i++) {
+			if (blankArray.includes(wordArray[y].charAt(x))) {
+				currentWordDiv.removeChild(currentWordDiv.firstChild);
+				currentWordDisplay = document.createTextNode(wordArray[y].charAt(x));
+				currentWordDiv.appendChild(currentWordDisplay);
+			}
+			else {
+				currentWordDiv.removeChild(currentWordDiv.firstChild);
+				currentWordDisplay = document.createTextNode(" _ ");
+				currentWordDiv.appendChild(currentWordDisplay);
+			}
+			x++;
+		}
+
+
+			/*if (blankArray.includes("c")) {
+				catLetters = " c _ _ ";
+				this.replace();
+				wordArray[0].charAt(0);
+			}
+			if (blankArray.includes("a")) {
+				catLetters = " _ a _ ";
+				this.replace();
+			}
+			if (blankArray.includes("t")) {
+				catLetters = " _ _ t ";
+				this.replace();
+			}
+			if (blankArray.includes("c") && blankArray.includes("t")) {
+				catLetters = " c _ t ";
+				this.replace();
+			}
+			if (blankArray.includes("c") && blankArray.includes("a")) {
+				catLetters = " c a _ ";
+				this.replace();
+			}
+			if (blankArray.includes("a") && blankArray.includes("t")) {
+				catLetters = " _ a t ";
+				this.replace();
+			}
+			if (blankArray.includes("c") && blankArray.includes("a") && blankArray.includes("t")) {
+				catLetters = " c a t ";
+				this.replace();
+			}*/
+			/*better code abobe*/
+
+			/* worse code below */
+			/*if (guessNum === 2 && aStore === false && tStore === false) {
 				catLetters = " c _ _ ";
     			this.replace();
 			}
@@ -153,7 +229,7 @@ window.onload = function() {
 			if (guessNum === 19 && cStore === true && aStore === true) {
 				catLetters = " c a t ";
 				this.replace();
-			}
+			}*/
 		},
 
 		prompt: function() {
@@ -166,7 +242,10 @@ window.onload = function() {
 			}
 			else if (catStore){
 				guessNum = 0;
+				blankArray.push("a");
+				console.log(blankArray);
 				this.displayCorrect();
+				x = 0;
 				this.astore();
 			}
 			else {
@@ -188,7 +267,9 @@ window.onload = function() {
 			}
 			else if (catStore){
 				guessNum = 2;
+				blankArray.push("c");
 				this.displayCorrect();
+				x = 0;
 				this.cstore();
 			}
 			else {
@@ -204,7 +285,9 @@ window.onload = function() {
 			}
 			else if (catStore){
 				guessNum = 19;
+				blankArray.push("t");
 				this.displayCorrect();
+				x = 0;
 				this.tstore();
 			}
 			else {
@@ -218,6 +301,13 @@ window.onload = function() {
 			if (eStore){
 				this.prompt();
 			}
+			else if (mouseStore){
+				guessNum = 4;
+				blankArray.push("e");
+				this.displayCorrect();
+				x = 0;
+				this.estore();
+			}
 			else {
 				guessNum = 4;
 				this.displayGuess();
@@ -225,6 +315,10 @@ window.onload = function() {
 		}
 	}
 }
+	wordFunc.catWord();
+	wordFunc.mouseWord();
+
+    /*guessFunc.displayCorrect();*/
 
 	document.addEventListener('keydown', function(event) { 
 			var akey = event.keyCode
