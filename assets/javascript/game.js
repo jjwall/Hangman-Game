@@ -36,68 +36,6 @@ window.onload = function() {
 
 	var wrongCounter = 10;
 
-	var catStore = false;
-
-	var mouseStore = false;
-
-	var giraffeStore = false;
-
-	var opossumStore = false;
-
-	var salamanderStore = false;
-
-	var aStore = false;
-
-	var bStore = false;
-
-	var cStore = false;
-
-	var dStore = false;
-
-	var eStore = false;
-
-	var fStore = false;
-
-	var gStore = false;
-
-	var hStore = false;
-
-	var iStore = false;
-
-	var jStore = false;
-
-	var kStore = false;
-
-	var lStore = false;
-
-	var mStore = false;
-
-	var nStore = false;
-
-	var oStore = false;
-
-	var pStore = false;
-
-	var qStore = false;
-
-	var rStore = false;
-
-	var sStore = false;
-
-	var tStore = false;
-
-	var uStore = false;
-
-	var vStore = false;
-
-	var wStore = false;
-
-	var xStore = false;
-
-	var yStore = false;
-
-	var zStore = false;
-
 	wordStore = wordArray[Math.floor((Math.random() * 5) + 0)];
 
     var wordFunc = {
@@ -117,7 +55,7 @@ window.onload = function() {
 
     	catWord: function(){
     		if (wordStore === "cat") {
-    			catStore = true;
+    			guessFunc.catStore = true;
     			y = 0;
     			winCounter = 3;
     			this.wordOperator();
@@ -126,7 +64,7 @@ window.onload = function() {
 
     	mouseWord: function() {
     		if (wordStore === "mouse") {
-    			mouseStore = true;
+    			guessFunc.mouseStore = true;
     			y = 1;
     			winCounter = 5;
     			this.wordOperator();
@@ -136,7 +74,7 @@ window.onload = function() {
 
     	giraffeWord: function() {
     		if (wordStore === "giraffe") {
-    			giraffeStore = true;
+    			guessFunc.giraffeStore = true;
     			y = 2;
     			winCounter = 6;
     			this.wordOperator();
@@ -145,7 +83,7 @@ window.onload = function() {
 
     	opossumWord: function() {
     		if (wordStore === "opossum") {
-    			opossumStore = true;
+    			guessFunc.opossumStore = true;
     			y = 3;
     			winCounter = 5;
     			this.wordOperator();
@@ -155,7 +93,7 @@ window.onload = function() {
 
     	salamanderWord: function() {
     		if (wordStore === "salamander") {
-    			salamanderStore = true;
+    			guessFunc.salamanderStore = true;
     			y = 4;
     			winCounter = 8;
     			this.wordOperator();
@@ -165,108 +103,241 @@ window.onload = function() {
 
 	var guessFunc = {
 
+		catStore: false,
+
+		mouseStore: false,
+
+		giraffeStore: false,
+
+		opossumStore: false,
+
+		salamanderStore: false,
+
+		aStore: false,
+
+		bStore: false,
+
+		cStore: false,
+
+		dStore: false,
+
+		eStore: false,
+
+		fStore: false,
+
+		gStore: false,
+
+		hStore: false,
+
+		iStore: false,
+
+		jStore: false,
+
+		kStore: false,
+
+		lStore: false,
+
+		mStore: false,
+
+		nStore: false,
+
+		oStore: false,
+
+		pStore: false,
+
+		qStore: false,
+
+		rStore: false,
+
+		sStore: false,
+
+		tStore: false,
+
+		uStore: false,
+
+		vStore: false,
+
+		wStore: false,
+
+		xStore: false,
+
+		yStore: false,
+
+		zStore: false,
+
+		variableReset: function () {
+			x = 0;
+
+			blankArray = [];
+
+			wrongCounter = 10;
+
+			this.catStore = false;
+
+			this.mouseStore = false;
+
+			this.giraffeStore = false;
+
+			this.opossumStore = false;
+
+			this.salamanderStore = false;
+
+			this.aStore = false;
+
+			this.bStore = false;
+
+			this.cStore = false;
+
+			this.dStore = false;
+
+			this.eStore = false;
+
+			this.fStore = false;
+
+			this.gStore = false;
+
+			this.hStore = false;
+
+			this.iStore = false;
+
+			this.jStore = false;
+
+			this.kStore = false;
+
+			this.lStore = false;
+
+			this.mStore = false;
+
+			this.nStore = false;
+
+			this.oStore = false;
+
+			this.pStore = false;
+
+			this.qStore = false;
+
+			this.rStore = false;
+
+			this.sStore = false;
+
+			this.tStore = false;
+
+			this.uStore = false;
+
+			this.vStore = false;
+
+			this.wStore = false;
+
+			this.xStore = false;
+
+			this.yStore = false;
+
+			this.zStore = false;
+
+		},
+
 		astore: function () {
-			aStore = true;
+			this.aStore = true;
 		},
 
 		bstore: function () {
-			bStore = true;
+			this.bStore = true;
 		},
 
 		cstore: function () {
-			cStore = true;
+			this.cStore = true;
 		},
 
 		dstore: function () {
-			dStore = true;
+			this.dStore = true;
 		},
 
 		estore: function () {
-			eStore = true;
+			this.eStore = true;
 		},
 
 		fstore: function () {
-			fStore = true;
+			this.fStore = true;
 		},
 
 		gstore: function () {
-			gStore = true;
+			this.gStore = true;
 		},
 
 		hstore: function () {
-			hStore = true;
+			this.hStore = true;
 		},
 
 		istore: function () {
-			iStore = true;
+			this.iStore = true;
 		},
 
 		jstore: function () {
-			jStore = true;
+			this.jStore = true;
 		},
 
 		kstore: function () {
-			kStore = true;
+			this.kStore = true;
 		},
 
 		lstore: function () {
-			lStore = true;
+			this.lStore = true;
 		},
 
 		mstore: function () {
-			mStore = true;
+			this.mStore = true;
 		},
 
 		nstore: function () {
-			nStore = true;
+			this.nStore = true;
 		},
 
 		ostore: function () {
-			oStore = true;
+			this.oStore = true;
 		},
 
 		pstore: function () {
-			pStore = true;
+			this.pStore = true;
 		},
 
 		qstore: function () {
-			qStore = true;
+			this.qStore = true;
 		},
 
 		rstore: function () {
-			rStore = true;
+			this.rStore = true;
 		},
 
 		sstore: function () {
-			sStore = true;
+			this.sStore = true;
 		},
 
 		tstore: function () {
-			tStore = true;
+			this.tStore = true;
 		},
 
 		ustore: function () {
-			uStore = true;
+			this.uStore = true;
 		},
 
 		vstore: function () {
-			vStore = true;
+			this.vStore = true;
 		},
 
 		wstore: function () {
-			wStore = true;
+			this.wStore = true;
 		},
 
 		xstore: function () {
-			xStore = true;
+			this.xStore = true;
 		},
 
 		ystore: function () {
-			yStore = true;
+			this.yStore = true;
 		},
 
 		zstore: function () {
-			zStore = true;
+			this.zStore = true;
 		},
 
 		wrongFunc: function() {
@@ -275,7 +346,8 @@ window.onload = function() {
 			wrongDisplay = document.createTextNode(wrongCounter);
 			wrongDiv.appendChild(wrongDisplay);
 			if (wrongCounter === 0) {
-			alert("You lose!");
+			alert("You lose!")
+			location.reload();
 			}
 		},
 
@@ -301,101 +373,48 @@ window.onload = function() {
 			x++;
 		}
 		winCounter--;
-		if (winCounter === 0) {
-			winDiv.removeChild(winDiv.firstChild);
+		this.winBuffer();
+		},
 
-			totalWins++;
+		winBuffer: function() {
+			setTimeout(function(){
+			if (winCounter === 0) {
+			
+				winDiv.removeChild(winDiv.firstChild);
 
-			winDisplay = document.createTextNode(totalWins);
+				totalWins++;
 
-			winDiv.appendChild(winDisplay);
+				winDisplay = document.createTextNode(totalWins);
 
-			alert("You win!");
+				winDiv.appendChild(winDisplay);
 
-			x = 0;
+				/*alert("You win!");*/
 
-			blankArray = [];
+				document.getElementById("current_word").innerHTML = "";
 
-			wrongCounter = 10;
+				document.getElementById("guessed").innerHTML = "";
 
-			catStore = false;
+				wordStore = wordArray[Math.floor((Math.random() * 5) + 0)];
 
-			mouseStore = false;
+				guessFunc.variableReset();
 
-			giraffeStore = false;
+				document.getElementById("wrong").innerHTML = "";
+			
+				wrongDisplay = document.createTextNode(wrongCounter);
 
-			opossumStore = false;
+				wrongDiv.appendChild(wrongDisplay);
 
-			salamanderStore = false;
+				wordFunc.catWord();
 
-			aStore = false;
+				wordFunc.mouseWord();
 
-			bStore = false;
+				wordFunc.giraffeWord();
 
-			cStore = false;
+				wordFunc.opossumWord();
 
-			dStore = false;
-
-			eStore = false;
-
-			fStore = false;
-
-			gStore = false;
-
-			hStore = false;
-
-			iStore = false;
-
-			jStore = false;
-
-			kStore = false;
-
-			lStore = false;
-
-			mStore = false;
-
-			nStore = false;
-
-			oStore = false;
-
-			pStore = false;
-
-			qStore = false;
-
-			rStore = false;
-
-			sStore = false;
-
-			tStore = false;
-
-			uStore = false;
-
-			vStore = false;
-
-			wStore = false;
-
-			xStore = false;
-
-			yStore = false;
-
-			zStore = false;
-
-			document.getElementById("current_word").innerHTML = "";
-
-			document.getElementById("guessed").innerHTML = "";
-
-			wordStore = wordArray[Math.floor((Math.random() * 5) + 0)];
-
-			wordFunc.catWord();
-
-			wordFunc.mouseWord();
-
-			wordFunc.giraffeWord();
-
-			wordFunc.opossumWord();
-
-			wordFunc.salamanderWord();
-			} 
+				wordFunc.salamanderWord();
+				}
+			}, 500);
 		},
 
 		prompt: function() {
@@ -403,24 +422,24 @@ window.onload = function() {
 		},
 
 		a: function() {
-			if (aStore){
+			if (this.aStore){
 				this.prompt();
 			}
-			else if (catStore){
+			else if (this.catStore){
 				guessNum = 0;
 				blankArray.push("a");
 				this.displayCorrect();
 				x = 0;
 				this.astore();
 			}
-			else if (giraffeStore){
+			else if (this.giraffeStore){
 				guessNum = 0;
 				blankArray.push("a");
 				this.displayCorrect();
 				x = 0;
 				this.astore();
 			}
-			else if (salamanderStore){
+			else if (this.salamanderStore){
 				guessNum = 0;
 				blankArray.push("a");
 				this.displayCorrect();
@@ -436,7 +455,7 @@ window.onload = function() {
 		},
 
 		b: function() {
-			if (bStore){
+			if (this.bStore){
 				this.prompt();
 			}
 			else {
@@ -448,10 +467,10 @@ window.onload = function() {
 		},
 
 		c: function() {
-			if (cStore){
+			if (this.cStore){
 				this.prompt();
 			}
-			else if (catStore){
+			else if (this.catStore){
 				guessNum = 2;
 				blankArray.push("c");
 				this.displayCorrect();
@@ -466,10 +485,10 @@ window.onload = function() {
 		},
 
 		d: function() {
-			if (dStore){
+			if (this.dStore){
 				this.prompt();
 			}
-			else if (salamanderStore){
+			else if (this.salamanderStore){
 				guessNum = 3;
 				blankArray.push("d");
 				this.displayCorrect();
@@ -485,24 +504,24 @@ window.onload = function() {
 		},
 
 		e: function() {
-			if (eStore){
+			if (this.eStore){
 				this.prompt();
 			}
-			else if (mouseStore){
+			else if (this.mouseStore){
 				guessNum = 4;
 				blankArray.push("e");
 				this.displayCorrect();
 				x = 0;
 				this.estore();
 			}
-			else if (giraffeStore){
+			else if (this.giraffeStore){
 				guessNum = 4;
 				blankArray.push("e");
 				this.displayCorrect();
 				x = 0;
 				this.estore();
 			}
-			else if (salamanderStore){
+			else if (this.salamanderStore){
 				guessNum = 4;
 				blankArray.push("e");
 				this.displayCorrect();
@@ -518,10 +537,10 @@ window.onload = function() {
 		},
 
 		f: function() {
-			if (fStore){
+			if (this.fStore){
 				this.prompt();
 			}
-			else if (giraffeStore){
+			else if (this.giraffeStore){
 				guessNum = 5;
 				blankArray.push("f");
 				this.displayCorrect();
@@ -537,10 +556,10 @@ window.onload = function() {
 		},
 
 		g: function() {
-			if (gStore){
+			if (this.gStore){
 				this.prompt();
 			}
-			else if (giraffeStore){
+			else if (this.giraffeStore){
 				guessNum = 6;
 				blankArray.push("g");
 				this.displayCorrect();
@@ -556,7 +575,7 @@ window.onload = function() {
 		},
 
 		h: function() {
-			if (hStore){
+			if (this.hStore){
 				this.prompt();
 			}
 			else {
@@ -568,10 +587,10 @@ window.onload = function() {
 		},
 
 		i: function() {
-			if (iStore){
+			if (this.iStore){
 				this.prompt();
 			}
-			else if (giraffeStore){
+			else if (this.giraffeStore){
 				guessNum = 8;
 				blankArray.push("i");
 				this.displayCorrect();
@@ -587,7 +606,7 @@ window.onload = function() {
 		},
 
 		j: function() {
-			if (jStore){
+			if (this.jStore){
 				this.prompt();
 			}
 			else {
@@ -599,7 +618,7 @@ window.onload = function() {
 		},
 
 		k: function() {
-			if (kStore){
+			if (this.kStore){
 				this.prompt();
 			}
 			else {
@@ -611,10 +630,10 @@ window.onload = function() {
 		},
 
 		l: function() {
-			if (lStore){
+			if (this.lStore){
 				this.prompt();
 			}
-			else if (salamanderStore){
+			else if (this.salamanderStore){
 				guessNum = 11;
 				blankArray.push("l");
 				this.displayCorrect();
@@ -630,24 +649,24 @@ window.onload = function() {
 		},
 
 		m: function() {
-			if (mStore){
+			if (this.mStore){
 				this.prompt();
 			}
-			else if (mouseStore){
+			else if (this.mouseStore){
 				guessNum = 12;
 				blankArray.push("m");
 				this.displayCorrect();
 				x = 0;
 				this.mstore();
 			}
-			else if (opossumStore){
+			else if (this.opossumStore){
 				guessNum = 12;
 				blankArray.push("m");
 				this.displayCorrect();
 				x = 0;
 				this.mstore();
 			}
-			else if (salamanderStore){
+			else if (this.salamanderStore){
 				guessNum = 12;
 				blankArray.push("m");
 				this.displayCorrect();
@@ -663,10 +682,10 @@ window.onload = function() {
 		},
 
 		n: function() {
-			if (nStore){
+			if (this.nStore){
 				this.prompt();
 			}
-			else if (salamanderStore){
+			else if (this.salamanderStore){
 				guessNum = 13;
 				blankArray.push("n");
 				this.displayCorrect();
@@ -682,17 +701,17 @@ window.onload = function() {
 		},
 
 		o: function() {
-			if (oStore){
+			if (this.oStore){
 				this.prompt();
 			}
-			else if (mouseStore){
+			else if (this.mouseStore){
 				guessNum = 14;
 				blankArray.push("o");
 				this.displayCorrect();
 				x = 0;
 				this.ostore();
 			}
-			else if (opossumStore){
+			else if (this.opossumStore){
 				guessNum = 14;
 				blankArray.push("o");
 				this.displayCorrect();
@@ -708,10 +727,10 @@ window.onload = function() {
 		},
 
 		p: function() {
-			if (pStore){
+			if (this.pStore){
 				this.prompt();
 			}
-			else if (opossumStore){
+			else if (this.opossumStore){
 				guessNum = 15;
 				blankArray.push("p");
 				this.displayCorrect();
@@ -727,7 +746,7 @@ window.onload = function() {
 		},
 
 		q: function() {
-			if (qStore){
+			if (this.qStore){
 				this.prompt();
 			}
 			else {
@@ -739,17 +758,17 @@ window.onload = function() {
 		},
 
 		r: function() {
-			if (rStore){
+			if (this.rStore){
 				this.prompt();
 			}
-			else if (giraffeStore){
+			else if (this.giraffeStore){
 				guessNum = 17;
 				blankArray.push("r");
 				this.displayCorrect();
 				x = 0;
 				this.rstore();
 			}
-			else if (salamanderStore){
+			else if (this.salamanderStore){
 				guessNum = 17;
 				blankArray.push("r");
 				this.displayCorrect();
@@ -765,24 +784,24 @@ window.onload = function() {
 		},
 
 		s: function() {
-			if (sStore){
+			if (this.sStore){
 				this.prompt();
 			}
-			else if (mouseStore){
+			else if (this.mouseStore){
 				guessNum = 18;
 				blankArray.push("s");
 				this.displayCorrect();
 				x = 0;
 				this.sstore();
 			}
-			else if (opossumStore){
+			else if (this.opossumStore){
 				guessNum = 18;
 				blankArray.push("s");
 				this.displayCorrect();
 				x = 0;
 				this.sstore();
 			}
-			else if (salamanderStore){
+			else if (this.salamanderStore){
 				guessNum = 18;
 				blankArray.push("s");
 				this.displayCorrect();
@@ -798,10 +817,10 @@ window.onload = function() {
 		},
 
 		t: function() {
-			if (tStore){
+			if (this.tStore){
 				this.prompt();
 			}
-			else if (catStore){
+			else if (this.catStore){
 				guessNum = 19;
 				blankArray.push("t");
 				this.displayCorrect();
@@ -816,17 +835,17 @@ window.onload = function() {
 		},
 
 		u: function() {
-			if (uStore){
+			if (this.uStore){
 				this.prompt();
 			}
-			else if (mouseStore){
+			else if (this.mouseStore){
 				guessNum = 20;
 				blankArray.push("u");
 				this.displayCorrect();
 				x = 0;
 				this.ustore();
 			}
-			else if (opossumStore){
+			else if (this.opossumStore){
 				guessNum = 20;
 				blankArray.push("u");
 				this.displayCorrect();
@@ -841,7 +860,7 @@ window.onload = function() {
 		},
 
 		v: function() {
-			if (vStore){
+			if (this.vStore){
 				this.prompt();
 			}
 			else {
@@ -852,7 +871,7 @@ window.onload = function() {
 		},
 
 		w: function() {
-			if (wStore){
+			if (this.wStore){
 				this.prompt();
 			}
 			else {
@@ -863,7 +882,7 @@ window.onload = function() {
 		},
 
 		x: function() {
-			if (xStore){
+			if (this.xStore){
 				this.prompt();
 			}
 			else {
@@ -874,7 +893,7 @@ window.onload = function() {
 		},
 
 		y: function() {
-			if (yStore){
+			if (this.yStore){
 				this.prompt();
 			}
 			else {
@@ -885,7 +904,7 @@ window.onload = function() {
 		},
 
 		z: function() {
-			if (zStore){
+			if (this.zStore){
 				this.prompt();
 			}
 			else {
@@ -895,7 +914,7 @@ window.onload = function() {
 			} 
 		}
 }
-	/*jank code right here, just to get functions running for now */
+	/*window.setTimeout(guessFunc.winBuffer(), 10000);*/
 	wordFunc.startFunc();
 	wordFunc.catWord();
 	wordFunc.mouseWord();
