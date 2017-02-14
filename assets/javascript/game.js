@@ -8,6 +8,52 @@ window.onload = function() {
 
 	var winDiv = document.getElementById("win");
 
+	var hangDiv = document.getElementById("hangman");
+
+	var hangTen = document.createElement("img");
+
+	var hangNine = document.createElement("img");
+
+	var hangEight = document.createElement("img");
+
+	var hangSeven = document.createElement("img");
+
+	var hangSix = document.createElement("img");
+
+	var hangFive = document.createElement("img");
+
+	var hangFour = document.createElement("img");
+
+	var hangThree = document.createElement("img");
+
+	var hangTwo = document.createElement("img");
+
+	var hangOne = document.createElement("img");
+
+	var hangZero = document.createElement("img");
+
+	hangTen.src = 'assets/images/hangten.png';
+
+	hangNine.src = 'assets/images/hangnine.png';
+
+	hangEight.src = 'assets/images/hangeight.png';
+
+	hangSeven.src = 'assets/images/hangseven.png';
+
+	hangSix.src = 'assets/images/hangsix.png';
+
+	hangFive.src = 'assets/images/hangfive.png';
+
+	hangFour.src = 'assets/images/hangfour.png';
+
+	hangThree.src = 'assets/images/hangthree.png';
+
+	hangTwo.src = 'assets/images/hangtwo.png';
+
+	hangOne.src = 'assets/images/hangone.png';
+
+	hangZero.src = 'assets/images/hangzero.png';
+
 	var guessArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 	var wordArray = ["cat", "mouse", "giraffe", "opossum", "salamander"];
@@ -44,6 +90,7 @@ window.onload = function() {
     		winDiv.appendChild(winDisplay);
     		wrongDisplay = document.createTextNode(wrongCounter);
 			wrongDiv.appendChild(wrongDisplay);
+			hangDiv.appendChild(hangTen);
     	},
 
     	wordOperator: function () {
@@ -345,9 +392,56 @@ window.onload = function() {
 			wrongCounter--;
 			wrongDisplay = document.createTextNode(wrongCounter);
 			wrongDiv.appendChild(wrongDisplay);
+			if (wrongCounter === 9) {
+				hangDiv.removeChild(hangTen);
+				hangDiv.appendChild(hangNine);
+
+			}
+			if (wrongCounter === 8) {
+				hangDiv.removeChild(hangNine);
+				hangDiv.appendChild(hangEight);
+
+			}
+			if (wrongCounter === 7) {
+				hangDiv.removeChild(hangEight);
+				hangDiv.appendChild(hangSeven);
+
+			}
+			if (wrongCounter === 6) {
+				hangDiv.removeChild(hangSeven);
+				hangDiv.appendChild(hangSix);
+
+			}
+			if (wrongCounter === 5) {
+				hangDiv.removeChild(hangSix);
+				hangDiv.appendChild(hangFive);
+
+			}
+			if (wrongCounter === 4) {
+				hangDiv.removeChild(hangFive);
+				hangDiv.appendChild(hangFour);
+
+			}
+			if (wrongCounter === 3) {
+				hangDiv.removeChild(hangFour);
+				hangDiv.appendChild(hangThree);
+
+			}
+			if (wrongCounter === 2) {
+				hangDiv.removeChild(hangThree);
+				hangDiv.appendChild(hangTwo);
+
+			}
+			if (wrongCounter === 1) {
+				hangDiv.removeChild(hangTwo);
+				hangDiv.appendChild(hangOne);
+
+			}
 			if (wrongCounter === 0) {
-			alert("You lose!")
-			location.reload();
+				hangDiv.removeChild(hangOne);
+				hangDiv.appendChild(hangZero);
+				setTimeout(function(){ alert("You lose!");
+				location.reload();}, 500);
 			}
 		},
 
@@ -379,6 +473,10 @@ window.onload = function() {
 		winBuffer: function() {
 			setTimeout(function(){
 			if (winCounter === 0) {
+
+				hangDiv.removeChild(hangDiv.firstChild);
+
+				hangDiv.appendChild(hangTen);
 			
 				winDiv.removeChild(winDiv.firstChild);
 
